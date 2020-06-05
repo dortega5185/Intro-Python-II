@@ -45,7 +45,7 @@ room["treasure"].s_to = room["narrow"]
 #
 # Main
 #
-room["outside"].items_list = [Item("Sword", "made of iron, intrument of death")]
+room["foyer"].items_list = [Item("Sword", "made of iron, intrument of death")]
 
 # Make a new player object that is currently in the 'outside' room.
 player = Player("jesus", room["outside"])
@@ -73,6 +73,14 @@ while True:
     if command in ["n", "s", "e", "w"]:
         player.location = player.move(command, player.location)
         continue
+
+    elif command == "find":
+        player.search()
+        print("Type [get] to grab an item in the room.")
+        print("Type [drop] to drop an item in the room.")
+
+    elif command == "get":
+        player.grabItem()
 
     if command == "q" or command == "quit":
         break

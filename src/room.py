@@ -11,4 +11,4 @@ class Room:
 
     def print_all_items(self):
         for i in self.items_list:
-            print(f"{i}")
+            print(f"{i.name}, {i.description}")
